@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- Sidebar -->
+   
     <aside class="sidebar">
       <div class="sidebar-logo">ObservaAção</div>
       <nav class="sidebar-nav">
@@ -13,7 +13,7 @@
       </div>
     </aside>
 
-    <!-- Conteúdo -->
+   
     <main class="main-content">
       <router-link to="/" class="voltar">← Voltar</router-link>
       <h1 class="page-title">Consultar por CPF</h1>
@@ -31,7 +31,7 @@
           Nenhuma solicitação encontrada para esse CPF.
         </div>
 
-        <!-- Tabela de resultados -->
+        
         <div v-if="resultados.length > 0">
           <h3 class="tabela-titulo">Protocolos Encontrados</h3>
           <table>

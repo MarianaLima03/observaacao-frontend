@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- Sidebar -->
+   
     <aside class="sidebar">
       <div class="sidebar-logo">ObservaAção</div>
       <nav class="sidebar-nav">
@@ -13,7 +13,7 @@
       </div>
     </aside>
 
-    <!-- Conteúdo -->
+   
     <main class="main-content">
       <router-link to="/" class="voltar">← Voltar</router-link>
       <h1 class="page-title">Consultar Protocolo</h1>
@@ -27,12 +27,12 @@
           </button>
         </div>
 
-        <!-- Não encontrado -->
+       
         <div v-if="naoEncontrado" class="msg-error">
           Nenhuma solicitação encontrada com o código informado.
         </div>
 
-        <!-- Resultado -->
+       
         <div v-if="resultado" class="resultado">
           <h3>Resultado da consulta:</h3>
           <div class="resultado-card">

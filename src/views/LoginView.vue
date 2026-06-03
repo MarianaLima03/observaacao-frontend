@@ -1,5 +1,6 @@
 <template>
   <div class="login-wrapper">
+    <router-link to="/" class="voltar">← Voltar</router-link>
     <div class="login-card">
       <div class="login-icon">🛡️</div>
       <h1>Login do Gestor</h1>
@@ -19,7 +20,7 @@
 
       <button class="btn-primary btn-full" @click="entrar">ENTRAR</button>
 
-      <a href="#" class="login-forgot">Esqueci minha senha</a>
+  
     </div>
   </div>
 </template>
@@ -34,7 +35,6 @@ const senha = ref('')
 const erro = ref('')
 
 function entrar() {
-  // Credenciais fixas do gestor (igual à 1ª entrega: admin / 123)
   if (usuario.value === 'admin' && senha.value === '123') {
     router.push('/gestor')
   } else {
@@ -50,7 +50,18 @@ function entrar() {
   align-items: center;
   justify-content: center;
   background: #f0f2f5;
+  position: relative;
 }
+
+.voltar {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  color: #6b7280;
+  text-decoration: none;
+  font-size: 14px;
+}
+.voltar:hover { color: #1a56db; }
 
 .login-card {
   background: white;

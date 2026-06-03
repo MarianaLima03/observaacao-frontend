@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- Sidebar -->
+    
     <aside class="sidebar">
       <div class="sidebar-logo">ObservaAção</div>
       <nav class="sidebar-nav">
@@ -11,7 +11,7 @@
       </div>
     </aside>
 
-    <!-- Conteúdo -->
+    
     <main class="main-content">
       <h1 class="page-title">Gerenciar Protocolos</h1>
       <p class="page-sub">Todos os protocolos</p>
@@ -53,7 +53,7 @@
           </tbody>
         </table>
 
-        <!-- Legenda -->
+        
         <div class="legenda">
           <strong>Legenda de Status:</strong>
           <span class="badge badge-aberto">Aberto</span>
@@ -65,7 +65,7 @@
       </div>
     </main>
 
-    <!-- Modal atualizar status -->
+   
     <div v-if="modalAberto" class="modal-overlay" @click.self="fecharModal">
       <div class="modal">
         <h2>Atualizar Status</h2>
@@ -214,7 +214,7 @@ function badgeClass(status) {
   font-size: 13px;
 }
 
-/* Modal */
+
 .modal-overlay {
   position: fixed;
   inset: 0;

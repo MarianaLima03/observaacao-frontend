@@ -18,7 +18,7 @@ body {
   color: #333;
 }
 
-/* Botões padrão */
+
 .btn-primary {
   background-color: #1a56db;
   color: white;
@@ -54,7 +54,7 @@ body {
 }
 .btn-secondary:hover { background-color: #4b5563; }
 
-/* Inputs padrão */
+
 input, select, textarea {
   width: 100%;
   padding: 10px 12px;
@@ -76,7 +76,6 @@ label {
   color: #374151;
 }
 
-/* Layout sidebar */
 .layout {
   display: flex;
   min-height: 100vh;
@@ -141,7 +140,7 @@ label {
   padding: 32px 40px;
 }
 
-/* Card */
+
 .card {
   background: white;
   border-radius: 10px;
@@ -149,7 +148,6 @@ label {
   border: 1px solid #e5e7eb;
 }
 
-/* Mensagens */
 .msg-success {
   background: #f0fdf4;
   border: 1px solid #86efac;
@@ -169,7 +167,7 @@ label {
   font-size: 14px;
 }
 
-/* Tabela */
+
 table {
   width: 100%;
   border-collapse: collapse;
@@ -191,7 +189,7 @@ td {
 tr:last-child td { border-bottom: none; }
 tr:hover td { background: #f9fafb; }
 
-/* Badge de status */
+
 .badge {
   display: inline-flex;
   align-items: center;

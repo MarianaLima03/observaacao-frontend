@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <!-- Sidebar -->
+    
     <aside class="sidebar">
       <div class="sidebar-logo">ObservaAção</div>
       <nav class="sidebar-nav">
@@ -13,7 +13,7 @@
       </div>
     </aside>
 
-    <!-- Conteúdo -->
+    
     <main class="main-content">
       <router-link to="/" class="voltar">← Voltar</router-link>
       <h1 class="page-title">Novo Protocolo</h1>
@@ -24,7 +24,7 @@
       <div v-if="erro" class="msg-error">{{ erro }}</div>
 
       <div class="card">
-        <!-- Anônimo -->
+        
         <div class="form-group">
           <label>Solicitação Anônima?</label>
           <div class="radio-group">
@@ -37,7 +37,6 @@
           </div>
         </div>
 
-        <!-- Nome e CPF (só se não for anônimo) -->
         <template v-if="!form.anonima">
           <div class="form-group">
             <label>Nome completo</label>
@@ -49,7 +48,6 @@
           </div>
         </template>
 
-        <!-- Categoria -->
         <div class="form-group">
           <label>Categoria</label>
           <select v-model="form.categoria">
@@ -63,19 +61,19 @@
           </select>
         </div>
 
-        <!-- Descrição -->
+        
         <div class="form-group">
           <label>Descrição do problema</label>
           <textarea v-model="form.descricao" rows="5" placeholder="Descreva o problema..."></textarea>
         </div>
 
-        <!-- Localização -->
+       
         <div class="form-group">
           <label>Localização/Bairro</label>
           <input v-model="form.localizacao" type="text" placeholder="Digite sua localização" />
         </div>
 
-        <!-- Prioridade -->
+       
         <div class="form-group">
           <label>Prioridade</label>
           <div class="radio-group">
@@ -137,7 +135,7 @@ async function enviar() {
     protocoloCriado.value = resposta.id
     sucesso.value = true
 
-    // Limpa o formulário
+
     Object.assign(form, {
       anonima: false, nomeCidadao: '', cpfCidadao: '',
       categoria: '', descricao: '', localizacao: '', prioridade: 'BAIXA'

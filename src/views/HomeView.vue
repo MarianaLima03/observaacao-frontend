@@ -10,15 +10,12 @@
         <p class="home-sub">Como deseja acessar o sistema?</p>
 
         <div class="home-options">
-          <!-- Cidadão -->
           <div class="option-card">
             <div class="option-icon">👤</div>
             <h2>Cidadão</h2>
             <p>Registrar e consultar protocolo de problemas</p>
             <router-link to="/cidadao" class="btn-primary">ACESSAR</router-link>
           </div>
-
-          <!-- Gestor -->
           <div class="option-card">
             <div class="option-icon">🛡️</div>
             <h2>Gestor</h2>
@@ -29,7 +26,7 @@
 
         <p class="home-help">
           Preciso de ajuda?
-          <a href="#">Entre em contato conosco</a>
+          <a href="https://wa.me/5544997577363" target="_blank">Entre em contato conosco</a>
         </p>
       </div>
     </div>
