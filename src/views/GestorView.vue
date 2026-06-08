@@ -21,37 +21,45 @@
 
       <div class="card">
         <table>
-          <thead>
-            <tr>
-              <th>Código</th>
-              <th>Nome</th>
-              <th>Descrição</th>
-              <th>Status</th>
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-if="solicitacoes.length === 0">
-              <td colspan="5" style="text-align:center; color:#9ca3af;">
-                Nenhuma solicitação cadastrada.
-              </td>
-            </tr>
-            <tr v-for="s in solicitacoes" :key="s.id">
-              <td><strong>#{{ s.id }}</strong></td>
-              <td>{{ s.anonima ? 'Anônimo' : (s.nomeCidadao || '—') }}</td>
-              <td>{{ s.descricao }}</td>
-              <td>
-                <span :class="badgeClass(s.statusAtual)" class="badge">
-                  {{ statusLabel(s.statusAtual) }}
-                </span>
-              </td>
-              <td class="acoes">
-                <button class="btn-editar" @click="abrirModal(s)" title="Editar status">✏️</button>
-                <button class="btn-danger" @click="deletar(s.id)" title="Remover">🗑️</button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Prioridade</th>
+      <th>Prazo</th>
+      <th>Status</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr v-if="solicitacoes.length === 0">
+      <td colspan="7" style="text-align:center; color:#9ca3af;">
+        Nenhuma solicitação cadastrada.
+      </td>
+    </tr>
+    <tr v-for="s in solicitacoes" :key="s.id">
+      <td><strong>#{{ s.id }}</strong></td>
+      <td>{{ s.anonima ? 'Anônimo' : (s.nomeCidadao || '—') }}</td>
+      <td>{{ s.descricao }}</td>
+      <td>
+        <span :class="prioridadeClass(s.prioridade)" class="badge">
+          {{ s.prioridade }}
+        </span>
+      </td>
+      <td>{{ s.prazo }} dias</td>
+      <td>
+        <span :class="badgeClass(s.statusAtual)" class="badge">
+          {{ statusLabel(s.statusAtual) }}
+        </span>
+      </td>
+      <td class="acoes">
+        <button class="btn-editar" @click="abrirModal(s)" title="Editar status">✏️</button>
+        <button class="btn-danger" @click="deletar(s.id)" title="Remover">🗑️</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
         
         <div class="legenda">
@@ -178,6 +186,14 @@ function badgeClass(status) {
   }
   return map[status] || 'badge-aberto'
 }
+function prioridadeClass(prioridade) {
+  const map = {
+    ALTA: 'badge-execucao',
+    MEDIA: 'badge-triagem',
+    BAIXA: 'badge-aberto'
+  }
+  return map[prioridade] || 'badge-aberto'
+}
 </script>
 
 <style scoped>
@@ -258,4 +274,5 @@ function badgeClass(status) {
   flex-direction: column;
   gap: 6px;
 }
+
 </style>
